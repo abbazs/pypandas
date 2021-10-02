@@ -3,4 +3,6 @@ ENV DEBIAN_FRONTEND='noninteractive'
 RUN pip install pandas rich notebook requests
 ENV JUPYTER_TOKEN=jupyter_notebook
 EXPOSE 8888
+# Add additional packages here
+RUN pip install pdfquery
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--autoreload", "--no-mathjax", "--allow-root"]
